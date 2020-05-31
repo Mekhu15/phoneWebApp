@@ -137,7 +137,7 @@ deleteContact = (id) =>{
      })
    });
 
-   this.loadMore = this.loadMore.bind(this);
+  //  this.loadMore = this.loadMore.bind(this);
   }
 
    //to show Add form
@@ -172,19 +172,19 @@ searchContact=(event) =>
 
   //load more contacts
 
-loadMore= (event) =>
-{
- this.setState({
-   visible: this.state.visible + 1
- })
-}
+// loadMore= (event) =>
+// {
+//  this.setState({
+//    visible: this.state.visible + 1
+//  })
+// }
 
-showLess= (event) =>
-{
- this.setState({
-   visible: this.state.visible - 1
- })
-}
+// showLess= (event) =>
+// {
+//  this.setState({
+//    visible: this.state.visible - 1
+//  })
+// }
 render()
 {
   
@@ -215,7 +215,7 @@ render()
       return object
       else if(object.name.toLowerCase().includes(this.state.search))
       return object
-    }).splice(0,this.state.visible).map((each) =>
+    }).map((each) =>
        <tr key= {each._id}>
   <td><button onClick={(e)=>this.detailContact(each._id)}> + </button> {each.name} </td>
   <td>{each.phoneNumber}</td>
@@ -226,7 +226,7 @@ render()
   }
   </tbody>
   </table>
-  <div class="row">
+  {/* <div class="row">
             <div class="col-md-12">
                 <div class="pull-right">
                    
@@ -234,7 +234,7 @@ render()
                 <button className="btn btn-outline-secondary" onClick={this.showLess}>Show Less...</button>
                 </div>
             </div>
-        </div>
+        </div> */}
    </div>: (this.state.show === false && this.state.showMe === true && this.state.check === false) ? 
    
    <div className="form">
